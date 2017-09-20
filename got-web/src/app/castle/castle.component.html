@@ -1,0 +1,27 @@
+<div class="divider"></div>
+<div class="section">
+  <img class="badge" src="assets/castles/{{castle.badgeName()}}.png"/>
+  <span class="castle">{{castle.name}}</span>
+  <span class="description">{{castle.description}}</span>
+
+  <div class="row">
+    <div class="col s6">
+      <div class="collection">
+        <div class="collection-item"
+            *ngFor="let minion of castle.minions | orderby:'name'">
+          <app-minion [minion]="minion"></app-minion>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s6">
+      <div class="collection">
+        <div id="{{castle.name}}"
+             class="collection-item"
+            *ngFor="let missive of missives">
+          <app-missive [missive]="missive"></app-missive>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

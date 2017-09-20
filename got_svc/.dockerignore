@@ -1,0 +1,12 @@
+.dockerignore
+.git
+.gitignore
+.log
+tmp
+_build
+deps
+*.ez
+releases
+erl_crash.dump
+node_modules
+docs

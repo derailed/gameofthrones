@@ -1,0 +1,7 @@
+select {
+  /* display: block; */
+  width:   200px;
+  height:  50px;
+  opacity: 100;
+  pointer-events: all;
+}

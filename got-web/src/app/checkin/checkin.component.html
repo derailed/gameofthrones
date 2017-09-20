@@ -1,0 +1,19 @@
+<div class="input-field1 col s4">
+  <label>Castles</label>
+  <select [ngModel]="creds.castle" (ngModelChange)="castleChanged($event)" class="browser-default">
+      <option value="" disabled selected>Where are you?</option>
+      <option *ngFor="let c of castles" [ngValue]="c.name">
+        {{c.name}}
+      </option>
+    </select>
+</div>
+
+<div class="input-field1 col s4">
+  <label>Minions</label>
+  <select (ngModelChange)="minionChanged($event)" [ngModel]="creds.minion" class="browser-default">
+      <option value="" disabled>Who are you?</option>
+      <option *ngFor="let m of minions" [ngValue]="m.name">
+        {{m.name}}
+      </option>
+    </select>
+</div>

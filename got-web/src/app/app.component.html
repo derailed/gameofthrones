@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">
+      <img src="assets/stark.png" style="width:100px;height:auto"/>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <span class="center flow-text">{{title}}</span>
+  </div>
+  <div class="row">
+    <app-checkin [castles]="castles" [minions]="minions" [creds]="creds" (onCredsChange)="credsChanged($event);"></app-checkin>
+  </div>
+  <div class="row">
+    <app-castles [castles]="castles"></app-castles>
+  </div>
+</div>

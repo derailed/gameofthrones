@@ -1,0 +1,13 @@
+<div class="minion"
+  (mouseenter)="toggleVisible(true)"
+  (mouseleave)="toggleVisible(false)">
+  <img class="mug" src="assets/minions/{{minion.avatar}}.png"/>
+  {{minion.name}}
+  <div *ngIf="selected">
+    <input #missive
+      (keyup.enter)="sendMissive(missive.value);missive.value=''"
+      (blur)="missive.value=''"
+      placeholder="Raven message..."
+    />
+  </div>
+</div>

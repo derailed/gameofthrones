@@ -1,0 +1,56 @@
+kind:       Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: got-svc
+  labels:
+    group: got
+    app:   got-svc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        group: got
+        app:   got-svc
+    spec:
+      containers:
+        - name:  got-svc
+          image: quay.io/derailed/got:0.0.2
+          ports:
+            - containerPort: 4000
+              name:          api
+          env:
+          - name:  GOT_PG_DB
+            value: got
+          - name:  PORT
+            value: "4000"
+          - name:  GOT_PG_USER
+            value: fernand
+          - name:  GOT_PG_PWD
+            value: Blee!
+          - name:  GOT_PG_HOST
+            value: 10.0.0.246
+          - name:  GOT_PG_PORT
+            value: "5432"
+          - name:  SECRET_KEYBASE
+            value: "kRDkpnuuP+5iO/NAoW8CLy0xjow6Y/CKAR+llXSGZdKR71Wveqdv4JM8ip1Obgoa"
+      volumes:
+        - name:     data
+          emptyDir: {}
+---
+kind:       Service
+apiVersion: v1
+metadata:
+  name: got-svc
+  labels:
+    group: got
+    app:   got-svc
+spec:
+  type: NodePort
+  selector:
+    app: got-svc
+  ports:
+    - name:       api
+      port:       4000
+      targetPort: api
+      nodePort:   30405

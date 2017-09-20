@@ -1,0 +1,20 @@
+div.missive img {
+    width:          40px;
+    height:         auto;
+    vertical-align: middle;
+}
+
+span.date {
+    font-style: bold;
+    color: #333;
+}
+
+div.sender {
+    color: #555;
+    text-align: right;
+    font-size: 0.75em;
+}
+
+span.message {
+    font-style: italic;
+}
