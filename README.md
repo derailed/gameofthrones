@@ -1,5 +1,7 @@
 # Gamex Of Thronex
 
-![alt got](./assets/got.jpg){:style="border:2px #ccc solid;float: left;margin-right: 20px;margin-bottom: 20px;"}
+<div align="right" style="margin-top:10px">
+  <img src="./assets/got.jpg" width="300px" height="auto"/>
+</div>
 
 Hello World
