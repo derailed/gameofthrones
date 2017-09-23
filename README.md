@@ -1,7 +1,7 @@
-# Gamex Of Thronex
+# Game of Thrones
 
-<div style="background:#000;margin-top:10px;border:5px red solid;">
-  <img src="./assets/got.jpg" width="500px" height="auto"/>
+<div align="center" style="margin-top:10px;">
+  <img src="./assets/got.jpg" width="auto" height="200px"/>
 </div>
 
 Hello World
