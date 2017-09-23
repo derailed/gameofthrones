@@ -1,4 +1,4 @@
 # GotSvc
 
-**TODO: Add description**
+Sample Phoenix service to demonstrate the use of presence and channels.
 
