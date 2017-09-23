@@ -1,4 +1,4 @@
-# GotWeb
+# GotUI
 
 Sample Angular application. This frontend connects to the Phoenix service and shows where
 the various minions resides. Inter castle communication is handled by sending ravens.
