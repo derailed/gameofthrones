@@ -4,4 +4,9 @@
 
 # Game of Thrones
 
-Hello World
+Sample Phoenix application to demonstrate the use of presence and channels.
+
+## Parts
+
+* got-ui - An angular frontend application
+* got-svc - A Phoenix service
