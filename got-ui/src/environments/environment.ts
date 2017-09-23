@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  // service_url: "localhost:4000"
-  service_url: "192.168.64.7:30405"
+  service_url: "localhost:4000"
+  // service_url: "192.168.64.7:30405"
 };

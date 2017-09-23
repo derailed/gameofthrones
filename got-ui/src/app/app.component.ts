@@ -15,7 +15,7 @@ import { Socket, Channel, Presence } from './shared/phoenix'
   styleUrls: ['app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = '#Slack On Thrones!'
+  title = 'Game of Thrones'
 
   castles: Castle[]
   minions: Minion[]

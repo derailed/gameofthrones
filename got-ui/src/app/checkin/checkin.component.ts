@@ -14,25 +14,17 @@ export class CheckinComponent {
   @Output() onCredsChange: EventEmitter<any> = new EventEmitter()
 
   castleChanged(name: string) {
-    console.log("Changed", name)
     this.creds.castle = name
     this.fireCredsChanged()
   }
 
-  fred(evt) {
-    console.log("Fred", evt)
-  }
-
   minionChanged(name: string) {
-    console.log("Changed", name)
     this.creds.minion = name
     this.fireCredsChanged()
   }
 
   private fireCredsChanged() {
-    console.log("YO!!")
     if (this.creds.castle && this.creds.minion) {
-      console.log("Firing!")
       this.onCredsChange.emit({ creds: this.creds })
     }
   }

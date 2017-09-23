@@ -357,7 +357,6 @@ export class Socket {
   }
 
   onConnError(error) {
-    console.log("transport", error)
     this.triggerChanError()
     this.stateChangeCallbacks.error.forEach(callback => callback(error))
   }
