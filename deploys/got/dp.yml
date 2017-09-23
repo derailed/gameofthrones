@@ -3,15 +3,13 @@ apiVersion: extensions/v1beta1
 metadata:
   name: got-svc
   labels:
-    group: got
-    app:   got-svc
+    app: got-svc
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        group: got
-        app:   got-svc
+        app: got-svc
     spec:
       containers:
         - name:  got-svc
@@ -25,32 +23,21 @@ spec:
           - name:  PORT
             value: "4000"
           - name:  GOT_PG_USER
-            value: fernand
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  db-user
           - name:  GOT_PG_PWD
-            value: Blee!
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  db-pwd
           - name:  GOT_PG_HOST
-            value: 10.0.0.246
+            value: got_postgresql
           - name:  GOT_PG_PORT
             value: "5432"
           - name:  SECRET_KEYBASE
-            value: "kRDkpnuuP+5iO/NAoW8CLy0xjow6Y/CKAR+llXSGZdKR71Wveqdv4JM8ip1Obgoa"
-      volumes:
-        - name:     data
-          emptyDir: {}
----
-kind:       Service
-apiVersion: v1
-metadata:
-  name: got-svc
-  labels:
-    group: got
-    app:   got-svc
-spec:
-  type: NodePort
-  selector:
-    app: got-svc
-  ports:
-    - name:       api
-      port:       4000
-      targetPort: api
-      nodePort:   30405
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  phx-key
