@@ -1,41 +1,17 @@
-image:           postgres
-imageTag:        9.6.2
-imagePullPolicy: IfNotPresent
-
+# Setup Db credentials...
 postgresUser:     fernand
 postgresPassword: Blee!
 
-## Persist data to a persitent volume
+# Persist volume size
 persistence:
-  enabled: true
+  size: 20M
 
-  accessMode: ReadWriteOnce
-  size:       100M
-  subPath:    postgresql-db
-
-metrics:
-  enabled: false
-  image: wrouesnel/postgres_exporter
-  imageTag: v0.1.1
-  imagePullPolicy: IfNotPresent
-  resources:
-    requests:
-      memory: 256Mi
-      cpu:    100m
-
+# Resource consumption
 resources:
   requests:
     memory: 256Mi
     cpu:    100m
 
+# Service type
 service:
-  type:        NodePort
-  port:        5432
-  externalIPs: []
-
-networkPolicy:
-  enabled:       false
-  allowExternal: true
-
-nodeSelector: {}
-tolerations: []
+  type: NodePort

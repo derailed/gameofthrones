@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  got:
+  - apiVersion: v1
+    created: 2017-09-26T17:31:11.275559851-06:00
+    description: Game Of Thrones Service Chart
+    digest: 202000d37b4ad975994decfabf432924241a8e9102a173971f94c1265804252f
+    name: got
+    urls:
+    - http://127.0.0.1:8879/got-0.0.1.tgz
+    version: 0.0.1
+generated: 2017-09-26T17:31:11.275110301-06:00

@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.app }}
+  labels:
+    app: {{ .Values.app }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app }}
+    spec:
+      containers:
+        - name: {{ .Values.app }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          env:
+          - name:  GOT_DB_NAME
+            value: got
+          - name:  PORT
+            value: {{ .Values.service.internalPort | quote }}
+          - name:  GOT_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  db-user
+          - name:  GOT_DB_PWD
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  db-pwd
+          - name:  GOT_DB_HOST
+            value: got-postgresql
+          - name:  GOT_DB_PORT
+            value: "5432"
+          - name:  SECRET_KEYBASE
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  phx-key
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}

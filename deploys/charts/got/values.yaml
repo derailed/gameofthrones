@@ -1,0 +1,17 @@
+name:         got-svc
+replicaCount: 1
+image:
+  repository: quay.io/derailed/got
+  tag:        0.0.5
+  pullPolicy: Always
+service:
+  name:         api
+  type:         NodePort
+  externalPort: 30405
+  internalPort: 4000
+resources: {}
+database:
+  user: changeme
+  pwd: changeme
+phoenix:
+  key: changeme

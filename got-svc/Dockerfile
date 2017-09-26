@@ -11,7 +11,7 @@ RUN mix do local.hex --force, local.rebar --force
 WORKDIR /app
 COPY . .
 
-RUN mix do deps.get, deps.compile, phx.digest ;\
+RUN mix do deps.get, deps.compile ;\
   mix release --env=prod ;\
   mkdir release ;\
   cd release ;\
@@ -27,7 +27,9 @@ ENV MIX_ENV=prod \
 ARG APP=got
 ARG VERSION=0.0.1
 WORKDIR /app/bin
+
+COPY scripts/run.sh /app/bin
 COPY --from=0 /app/release /app
 RUN apk add --no-cache --update bash openssl ca-certificates
 
-CMD ["./got", "foreground"]
+ENTRYPOINT ["/app/bin/run.sh"]

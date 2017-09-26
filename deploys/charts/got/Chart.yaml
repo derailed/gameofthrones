@@ -1,0 +1,4 @@
+apiVersion:  v1
+description: Game Of Thrones Service Chart
+name:        got
+version:     0.0.1
