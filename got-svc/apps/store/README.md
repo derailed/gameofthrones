@@ -1,3 +1,3 @@
 # GoT Store
 
-Manages Game Of Throne application persistence layer.
+Manages Game of Thrones application persistence layer.
