@@ -8,5 +8,5 @@ Sample Phoenix application to demonstrate the use of presence and channels.
 
 ## Parts
 
-* got-ui - An angular frontend application
-* got-svc - A Phoenix service
+* [got-ui](https://github.com/derailed/gameofthrones/tree/master/got-ui) - An angular frontend application
+* [got-svc](https://github.com/derailed/gameofthrones/tree/master/got-svc) - A Phoenix service
