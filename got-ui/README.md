@@ -7,4 +7,4 @@ message format:
 
 > castle| message
 
-Where castle is composed of the castle name initials in lower-case. ie Castle Black => cb
+Where castle constitutes of the castle name initials in lower-case. ie Castle Black => cb
