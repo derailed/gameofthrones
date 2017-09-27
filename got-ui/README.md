@@ -1,9 +1,10 @@
-# GotUI
+# GoT UI
 
-Sample Angular application. This frontend connects to the Phoenix service and shows where
-the various minions resides. Inter castle communication is handled by sending ravens.
+Game of Thrones Angular front end application. This app connects to the GoT web service and shows where the various minions resides. Inter-castle communication is handled by sending raven messages.
 
-A given minion can send a raven to a minion of another castle by using the following raven
+A given Minion can send a Raven to a Castle by using the following raven
 message format:
 
-castle| message where castle is composed of the castle name initials in lower-case. ie Castle Black => cb
+> castle| message
+
+Where castle is composed of the castle name initials in lower-case. ie Castle Black => cb
