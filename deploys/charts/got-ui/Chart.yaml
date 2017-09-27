@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Game Of Thrones Angular FrontEnd
+name: got-ui
+version: 0.0.1

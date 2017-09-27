@@ -1,0 +1,4 @@
+app: got-ui
+image:
+  repository: quay.io/derailed/got-ui
+  tag: 0.0.1

@@ -1,4 +1,7 @@
 app: got-svc
+image:
+  repository: quay.io/derailed/got-svc
+  tag: 0.0.5
 database:
   user: fernand
   pwd:  Blee!

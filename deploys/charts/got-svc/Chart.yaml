@@ -1,4 +1,4 @@
 apiVersion:  v1
 description: Game Of Thrones Service Chart
-name:        got
+name:        got-svc
 version:     0.0.1
