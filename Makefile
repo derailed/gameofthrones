@@ -41,7 +41,7 @@ ui-down:          ## Uninstall GoT UI
 ##Docker Builds...
 
 svc-img:          ## Builds GoT Svc image
-	@docker build -f got-svc/Dockerfile -t ${SVC_IMAGE}:${SVC_TAG} --build-arg APP=got --build-arg VERSION=0.0.1 got-svc/
+	@docker build -f got-svc/Dockerfile -t ${SVC-IMAGE}:${SVC-TAG} --build-arg APP=got --build-arg VERSION=0.0.1 got-svc/
 
 svc-push: svc-img ## Push GoT Svc image to Quay registry
-	@docker push $(SVC_IMAGE):$(SVC_TAG)
+	@docker push $(SVC-IMAGE):$(SVC-TAG)
