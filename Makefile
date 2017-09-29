@@ -1,5 +1,5 @@
 SVC-IMAGE=quay.io/derailed/got-svc
-SVC-TAG=0.0.5
+SVC-TAG=0.0.6
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -45,3 +45,10 @@ svc-img:          ## Builds GoT Svc image
 
 svc-push: svc-img ## Push GoT Svc image to Quay registry
 	@docker push $(SVC-IMAGE):$(SVC-TAG)
+
+# -----------------------------------------------------------------------------
+##Charts Builds...
+
+charts:
+	@helm package deploys/charts/got-svc -d ../helm-charts
+	@helm package deploys/charts/got-ui -d ../helm-charts

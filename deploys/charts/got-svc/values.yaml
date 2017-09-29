@@ -5,6 +5,7 @@ image:
   tag:        0.0.5
   pullPolicy: Always
 service:
+  host:         got-svc
   name:         api
   type:         NodePort
   externalPort: 30405
@@ -12,6 +13,9 @@ service:
 resources: {}
 database:
   user: changeme
-  pwd: changeme
+  pwd:  changeme
+  name: got
+  host: got-postgresql
+  port: 5432
 phoenix:
   key: changeme

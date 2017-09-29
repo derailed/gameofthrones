@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.app }}
+  labels:
+    app: {{ .Values.app }}
+spec:
+  backend:
+    serviceName: {{ .Values.app }}
+    servicePort: {{ .Values.service.internalPort }}

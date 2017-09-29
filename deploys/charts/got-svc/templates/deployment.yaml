@@ -19,9 +19,22 @@ spec:
             - containerPort: {{ .Values.service.internalPort }}
           env:
           - name:  GOT_DB_NAME
-            value: got
+            value: {{ .Values.database.name }}
+          - name:  GOT_SVC_HOST
+            value: {{ .Values.service.host }}
+          - name:  GOT_SVC_PORT
+            value: {{ .Values.service.externalPort | quote }}
+          - name:  GOT_COOKIE
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  erl-cookie
           - name:  PORT
             value: {{ .Values.service.internalPort | quote }}
+          - name:  GOT_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
           - name:  GOT_DB_USER
             valueFrom:
               secretKeyRef:
@@ -33,9 +46,9 @@ spec:
                 name: got-secrets
                 key:  db-pwd
           - name:  GOT_DB_HOST
-            value: got-postgresql
+            value: {{ .Values.database.host }}
           - name:  GOT_DB_PORT
-            value: "5432"
+            value: {{ .Values.database.port | quote }}
           - name:  SECRET_KEYBASE
             valueFrom:
               secretKeyRef:

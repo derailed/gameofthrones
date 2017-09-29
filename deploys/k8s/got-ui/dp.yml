@@ -1,0 +1,24 @@
+kind:       Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: got-ui
+  labels:
+    app: got-ui
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: got-ui
+    spec:
+      containers:
+        - name:            got-ui
+          image:           quay.io/derailed/got-ui:0.0.3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name:          http
+          env:
+          - name:  GOT_SVC_URL
+            value: 192.168.64.8:30405
+            # value: 35.201.68.61

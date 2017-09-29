@@ -1,6 +1,6 @@
 # Compile Release Stage
 FROM derailed/alpine-elixir:1.5.0
-MAINTAINER Fernand Galiana
+LABEL maintainer="Fernand Galiana"
 
 ENV MIX_ENV=prod
 ARG APP=got
@@ -31,5 +31,7 @@ WORKDIR /app/bin
 COPY scripts/run.sh /app/bin
 COPY --from=0 /app/release /app
 RUN apk add --no-cache --update bash openssl ca-certificates
+
+EXPOSE 4000
 
 ENTRYPOINT ["/app/bin/run.sh"]

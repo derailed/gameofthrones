@@ -51,5 +51,6 @@ release :got do
     store: :permanent,
     svc: :permanent
   ]
+  set vm_args: "./rel/vm.args"
 end
 

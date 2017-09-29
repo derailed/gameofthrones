@@ -1,9 +1,11 @@
 app: got-svc
 image:
   repository: quay.io/derailed/got-svc
-  tag: 0.0.5
+  tag: 0.0.6
 database:
   user: fernand
   pwd:  Blee!
 phoenix:
-  key: kRDkpnuuP+5iO/NAoW8CLy0xjow6Y/CKAR+llXSGZdKR71Wveqdv4JM8ip1Obgoa
+  key: kingdoms
+erl:
+  cookie: kingdoms

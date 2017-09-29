@@ -9,6 +9,12 @@ defmodule SvcWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  scope "/", SvcWeb do
+    pipe_through :browser
+
+    resources "/", HomeController, only: [:index]
+  end
+
   pipeline :api do
     plug CORSPlug, [origin: "*"]
     plug :accepts, ["json"]

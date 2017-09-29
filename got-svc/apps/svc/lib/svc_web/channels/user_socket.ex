@@ -5,16 +5,9 @@ defmodule SvcWeb.UserSocket do
   channel "kingdoms", SvcWeb.CastleChannel
 
   ## Transports
-  # transport :websocket, Phoenix.Transports.WebSocket
   transport :websocket, Phoenix.Transports.WebSocket, check_origin: false
-  # transport :longpoll, Phoenix.Transports.LongPoll
 
   def connect(%{"subject" => castle, "body" => minion}, socket) do
-    IO.puts("!!!! Custom connect")
-    IO.puts("NG URL")
-    IO.puts(Application.get_env(:gotsvc, :web_url))
-
-    # socket.check_origin([Application.get_env(:gotsvc, :web_url)])
     sock = socket
         |> assign(:castle, castle)
         |> assign(:minion, minion)
@@ -22,11 +15,6 @@ defmodule SvcWeb.UserSocket do
   end
 
   def connect(%{"castle" => castle, "minion" => minion}, socket) do
-    IO.puts("!!!! REG Connect")
-    IO.puts("NG URL")
-    IO.puts(Application.get_env(:gotsvc, :web_url))
-
-    # socket.check_origin([Application.get_env(:gotsvc, :web_url)])
     sock = socket
         |> assign(:castle, castle)
         |> assign(:minion, minion)

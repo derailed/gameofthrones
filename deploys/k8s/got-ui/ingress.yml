@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: got-ui
+  labels:
+    app: got-ui
+spec:
+  backend:
+    serviceName: got-ui
+    servicePort: 80

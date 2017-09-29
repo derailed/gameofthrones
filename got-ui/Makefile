@@ -1,10 +1,10 @@
 IMG_NAME := quay.io/derailed/got-ui
-IMG_TAG  := 0.0.1
+IMG_TAG  := 0.0.3
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-img:    ## Build docker image
+img:      ## Build docker image
 	@echo "Generating assets... Please wait!"
 	@rm -rf dist
 	@ng b -prod

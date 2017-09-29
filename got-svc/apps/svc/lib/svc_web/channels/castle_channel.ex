@@ -4,10 +4,6 @@ defmodule SvcWeb.CastleChannel do
     alias SvcWeb.Presence
 
     def join("kingdoms", params, socket) do
-        IO.puts "Joined"
-        IO.puts "!!! PARAMS"
-        IO.inspect(params)
-
         send self(), :after_join
 
         if Map.has_key?(params, "subject") do

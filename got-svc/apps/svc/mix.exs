@@ -20,7 +20,7 @@ defmodule Svc.Mixfile do
   def application do
     [
       mod: {Svc.Application, []},
-      extra_applications: [:logger, :phoenix_pubsub, :runtime_tools]
+      extra_applications: [:logger, :phoenix_pubsub, :runtime_tools, :peerage]
     ]
   end
 
@@ -37,6 +37,7 @@ defmodule Svc.Mixfile do
       {:cowboy             , "~> 1.0"},
       {:cors_plug          , "~> 1.1"},
       {:store              , in_umbrella: true},
+      {:peerage            , "~> 1.0.2"}
     ]
   end
 end

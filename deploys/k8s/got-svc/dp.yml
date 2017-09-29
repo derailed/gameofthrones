@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name:  got-svc
-          image: quay.io/derailed/got:0.0.5
+          image: quay.io/derailed/got-svc:0.0.6
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
@@ -21,8 +21,21 @@ spec:
           env:
           - name:  GOT_DB_NAME
             value: got
+          - name:  GOT_SVC_HOST
+            value: got-svc
+          - name:  GOT_SVC_PORT
+            value: "80"
           - name:  PORT
             value: "4000"
+          - name:  GOT_COOKIE
+            valueFrom:
+              secretKeyRef:
+                name: got-secrets
+                key:  erl-cookie
+          - name:  GOT_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
           - name:  GOT_DB_USER
             valueFrom:
               secretKeyRef:
@@ -37,7 +50,7 @@ spec:
             value: got-postgresql
           - name:  GOT_DB_PORT
             value: "5432"
-          - name:  SECRET_KEYBASE
+          - name:  SECRET_KEY_BASE
             valueFrom:
               secretKeyRef:
                 name: got-secrets

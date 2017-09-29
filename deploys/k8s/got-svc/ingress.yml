@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: got-svc
+  labels:
+    app: got-svc
+spec:
+  backend:
+    serviceName: got-svc
+    servicePort: 4000
