@@ -23,14 +23,6 @@ defmodule Store.Minion do
   end
 
   @doc """
-  Clear out all minions
-  """
-  @spec clear() :: {integer, nil | [term]} | no_return
-  def clear() do
-    Repo.delete_all(__MODULE__)
-  end
-
-  @doc """
   Adds a new minion given a name and an image name
   """
   @spec add(name: String.t, avatar: String.t) :: Ecto.Schema.t | no_return

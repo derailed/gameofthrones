@@ -9,6 +9,14 @@ defmodule Store.Record do
       import Ecto.Query
 
       alias Store.Repo
+
+      @doc """
+      Clear out all records
+      """
+      @spec clear() :: {integer, nil | [term]} | no_return
+      def clear() do
+        Repo.delete_all(__MODULE__)
+      end
     end
   end
 end

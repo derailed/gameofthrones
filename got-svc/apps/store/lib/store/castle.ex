@@ -15,18 +15,11 @@ defmodule Store.Castle do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
+  @spec changeset(Ecto.Schema.t, %{required(atom) => any}) :: Ecto.Schema.t
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :description])
     |> validate_required([:name, :description])
-  end
-
-  @doc """
-  Clear out all castles
-  """
-  @spec clear :: {integer, nil | [term]} | no_return
-  def clear() do
-    Repo.delete_all(__MODULE__)
   end
 
   @doc """
