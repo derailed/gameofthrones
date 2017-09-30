@@ -1,5 +1,5 @@
 SVC-IMAGE=quay.io/derailed/got-svc
-SVC-TAG=0.0.8
+SVC-TAG=0.0.7
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -7,10 +7,10 @@ help:
 # -----------------------------------------------------------------------------
 ##GoT DB Commands
 db-up:            ## Provisions Postgres DB
-	@helm install --name got -f deploys/helm/pg.yml stable/postgresql
+	@helm install --name got-db -f deploys/helm/pg.yml stable/postgresql
 
 db-down:          ## Uninstall Postgres DB
-	@helm delete got --purge
+	@helm delete got-db --purge
 
 # -----------------------------------------------------------------------------
 ##GoT Svc Commands
