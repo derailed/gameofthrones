@@ -16,4 +16,16 @@ defmodule Store.Minion do
     |> cast(params, [:name, :avatar])
     |> validate_required([:name, :avatar])
   end
+
+  def clear() do
+    Repo.delete_all(__MODULE__)
+  end
+
+  def add(name: name, avatar: img) do
+    %__MODULE__{
+      name:   name,
+      avatar: img
+    }
+    |> Repo.insert!
+  end
 end

@@ -1,27 +1,25 @@
 #
-alias Store.Repo
-alias Store.Castle
-alias Store.Minion
+alias Store.{Castle, Minion}
 
-Repo.delete_all(Castle)
-Repo.delete_all(Minion)
+Castle.clear()
+Minion.clear()
 
-Repo.insert! %Castle{
-  name:        "DragonStone",
-  description: "Blackwater Bay. House of Targaryen."
-}
-Repo.insert! %Castle{
-  name:        "Castle Black",
-  description: "Kingsroad. Night's watch headquaters."
-}
-Repo.insert! %Castle{
-  name:        "Red Keep",
-  description: "King's landing. Residence for king of the Andals and the First Men."
-}
-# Repo.insert! %Castle{
-#   name:        "Baretheon",
-#   description: "Rules the Stormlands on the eastern coast of Westeros"
-# }
+Castle.add(
+  name: "DragonStone",
+  desc: "Blackwater Bay. House of Targaryen."
+)
+Castle.add(
+  name: "Castle Black",
+  desc: "Kingsroad. Night's watch headquaters."
+)
+Castle.add(
+  name: "Red Keep",
+  desc: "King's landing. Residence for king of the Andals and the First Men."
+)
+# Castle.add(
+#   name: "Baretheon",
+#   desc: "Rules the Stormlands on the eastern coast of Westeros"
+# )
 
 cast = [
   "Jon Snow",
@@ -33,5 +31,5 @@ cast = [
 ]
 
 Enum.each( Enum.with_index(cast), fn({c, index}) ->
-    Repo.insert! %Minion{name: c, avatar: "m#{index+1}"}
+    Minion.add(name: c, avatar: "m#{index+1}")
 end)

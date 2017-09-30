@@ -7,6 +7,8 @@ defmodule Store.Record do
 
       import Ecto.Changeset
       import Ecto.Query
+
+      alias Store.Repo
     end
   end
 end

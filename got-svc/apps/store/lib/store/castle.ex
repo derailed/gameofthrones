@@ -16,4 +16,16 @@ defmodule Store.Castle do
     |> cast(params, [:name, :description])
     |> validate_required([:name, :description])
   end
+
+  def clear() do
+    Repo.delete_all(__MODULE__)
+  end
+
+  def add(name: name, desc: desc) do
+    %__MODULE__{
+      name:        name,
+      description: desc
+    }
+    |> Repo.insert!
+  end
 end

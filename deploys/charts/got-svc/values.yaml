@@ -1,4 +1,4 @@
-name:         got-svc
+app:         got-svc
 replicaCount: 1
 image:
   repository: quay.io/derailed/got
