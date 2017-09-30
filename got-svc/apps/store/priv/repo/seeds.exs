@@ -16,10 +16,10 @@ Castle.add(
   name: "Red Keep",
   desc: "King's landing. Residence for king of the Andals and the First Men."
 )
-Castle.add(
-  name: "Baretheon",
-  desc: "Rules the Stormlands on the eastern coast of Westeros"
-)
+# Castle.add(
+#   name: "Baretheon",
+#   desc: "Rules the Stormlands on the eastern coast of Westeros"
+# )
 
 cast = [
   "Jon Snow",
