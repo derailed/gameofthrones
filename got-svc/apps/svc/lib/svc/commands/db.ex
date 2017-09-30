@@ -5,8 +5,8 @@ defmodule Svc.Commands.Db do
   Update database. Ensures the db exists, is migrated and seeded
   """
   def update_db do
-    :ok = ensure_db()
-    :ok = ensure_migrate()
+    :ok = ensure_db() |> IO.inspect
+    :ok = ensure_migrate() |> IO.inspect
   end
 
   @doc """

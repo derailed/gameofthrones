@@ -18,6 +18,10 @@ Repo.insert! %Castle{
   name:        "Red Keep",
   description: "King's landing. Residence for king of the Andals and the First Men."
 }
+# Repo.insert! %Castle{
+#   name:        "Baretheon",
+#   description: "Rules the Stormlands on the eastern coast of Westeros"
+# }
 
 cast = [
   "Jon Snow",

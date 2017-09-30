@@ -1,10 +1,11 @@
 app: got-svc
 image:
   repository: quay.io/derailed/got-svc
-  tag: 0.0.6
+  tag: 0.0.7
 database:
   user: fernand
   pwd:  Blee!
+  host: got-db-postgresql
 phoenix:
   key: kingdoms
 erl:

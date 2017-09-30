@@ -1,0 +1,13 @@
+---
+kind:       Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.app }}-headless
+  labels:
+    app: {{ .Values.app }}-headless
+spec:
+  clusterIP: None
+  selector:
+    app: {{ .Values.app }}
+  ports:
+    - port: {{ .Values.service.internalPort }}

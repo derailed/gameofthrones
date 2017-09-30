@@ -3,4 +3,4 @@ image:
   repository: quay.io/derailed/got-ui
   tag: 0.0.3
 got_svc:
-  address: 192.168.64.8:30405
+  address: 35.190.79.68

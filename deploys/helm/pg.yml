@@ -14,4 +14,4 @@ resources:
 
 # Service type
 service:
-  type: NodePort
+  type: ClusterIP

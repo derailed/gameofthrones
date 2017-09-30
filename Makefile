@@ -1,5 +1,5 @@
 SVC-IMAGE=quay.io/derailed/got-svc
-SVC-TAG=0.0.6
+SVC-TAG=0.0.8
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -19,7 +19,7 @@ svc-up:           ## Provision the GoT service
 	@helm install --name got-svc -f deploys/helm/got-svc.yml imhotep/got-svc
 
 svc-update:       ## Update Svc chart with new values
-	@helm upgrade got-svc imhotep/got-svc -f deploys/helm/got-svc.yml
+	@helm upgrade got-svc -f deploys/helm/got-svc.yml imhotep/got-svc
 
 svc-down:         ## Uninstall GoT service
 	@helm delete got-svc --purge
