@@ -1,7 +1,7 @@
 app: got-ui
 image:
   repository: quay.io/derailed/got-ui
-  tag: 0.0.3
+  tag:        0.0.3
   pullPolicy: Always
 got_svc:
   address: 192.168.64.8:30405

@@ -1,17 +1,10 @@
-# Setup Db credentials...
 postgresUser:     fernand
 postgresPassword: Blee!
-
-# Persist volume size
 persistence:
   size: 20M
-
-# Resource consumption
 resources:
   requests:
     memory: 256Mi
     cpu:    100m
-
-# Service type
 service:
   type: ClusterIP
